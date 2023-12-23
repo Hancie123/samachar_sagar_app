@@ -24,7 +24,7 @@ class HomeClass extends StatelessWidget {
           SystemNavigator.pop();
         },
       ),
-      appBar: AppBar(backgroundColor: Colors.green, title: const Text("Samachar Sanchar")),
+      appBar: AppBar(backgroundColor: Colors.green, title: const Text("Samachar Sagar")),
       body: SizedBox(
         height: MediaQuery.of(context).size.height,
         child: const Column(

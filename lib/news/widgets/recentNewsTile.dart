@@ -51,8 +51,8 @@ class RecentNewsTile extends StatelessWidget {
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Text(
-                                  newsTilte,
-                                  style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                                  (newsTilte.characters.length <= 25) ? newsTilte : '${newsTilte.substring(0, 29)}...',
+                                  style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
                                 ),
                               ))
                         ],
