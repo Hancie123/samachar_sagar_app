@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:get/route_manager.dart';
+import 'package:samachar_sagar_app/news/about.dart';
 
 class DrawerNav extends StatelessWidget {
   const DrawerNav({super.key});
@@ -8,23 +11,32 @@ class DrawerNav extends StatelessWidget {
     return Drawer(
       child: ListView(
         children: [
-          UserAccountsDrawerHeader(
-            accountName: const Text("Hancie Phago"),
-            accountEmail: const Text("hanciephago@gmail.com"),
-            currentAccountPicture: CircleAvatar(
-                child: ClipOval(
-              child: Image.asset('assets/img/logo.png'),
-            )),
-            decoration: const BoxDecoration(color: Colors.blueAccent),
+          Container(
+            color: Colors.green,
+            height: 200,
+            child: Column(children: [
+              ClipRRect(
+                  borderRadius: BorderRadius.circular(25),
+                  child: Image.asset(
+                    'assets/img/logo.png',
+                    height: 200,
+                    width: 200,
+                  )),
+            ]),
           ),
-          const ListTile(
+           ListTile(
             leading: Icon(Icons.person),
-            title: Text("Profile"),
+            title: Text("About"),
+            onTap: () {
+              Get.to(() => AboutPage());
+            },
           ),
-          const ListTile(
+          ListTile(
             leading: Icon(Icons.logout),
-            title: Text("Logout"),
-            // onTap: () => Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => LoginView()), (route) => false),
+            title: Text("Exit"),
+            onTap: () {
+              SystemNavigator.pop();
+            },
           )
         ],
       ),
